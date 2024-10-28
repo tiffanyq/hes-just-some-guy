@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hes just some guy</title>
+    <meta property="og:title" content="hes just some guy">
+    <meta property="og:description" content="right?">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🙂</text></svg>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+      html {
+        touch-action: manipulation;
+      }
+
+      html, body {
+        overflow-x: hidden;
+        overflow-y: hidden;
+        margin: 0;
+      }
+
+      body {
+        padding: 0;
+        height: 100vh;
+      }
+
+      canvas {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+      }
+
+      #body-container {
+        z-index: 2;
+        margin-top: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+      }
+
+      #face {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin-top: 32px;
+        font-size: 360px;
+        -webkit-user-select: none;
+        user-select: none;
+        z-index: 3;
+      }
+
+      #hope-he-sees-this {
+        font-style: italic;
+        font-size: 16px;
+        color: #551A8B;
+        z-index: 3;
+      }
+
+      .playfair-display {
+        font-family: "Playfair Display", serif;
+        font-optical-sizing: auto;
+        font-weight: 700;
+        font-style: normal;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js" integrity="sha512-b/htz6gIyFi3dwSoZ0Uv3cuv3Ony7EeKkacgrcVg8CMzu90n777qveu0PBcbZUA7TzyENGtU+qZRuFAkfqgyoQ==" crossorigin="anonymous"></script>
+    <script src="sketch.js"></script>
+  </head>
+  <body>
+    <div id="body-container">
+        <div id="face">🙂</div>
+        <a id="hope-he-sees-this" class = "playfair-display" href ="https://tiffanyq.github.io/how-dare-he-post">back to Photo and video sharing social network</a>
+    </div>
+    <script>
+     function imFine() {
+      const face = document.getElementById("face");
+      face.innerText = face.innerText === "🙂" ? "🥲" : "🙂";
+     }
+
+     window.addEventListener("load", function(event) {
+        const face = document.getElementById("face");
+        face.addEventListener("mouseover", imFine, false);
+        face.addEventListener("mouseleave", imFine, false);
+        document.body.addEventListener("click", createEmoji); // stamping
+        document.body.addEventListener("mousemove", createEmoji); // stamping
+        document.body.addEventListener("touchmove", createEmoji); // stamping
+    });
+    </script>
+  </body>
+</html>
